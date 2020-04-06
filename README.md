@@ -11,14 +11,14 @@ language : Javascript, PHP 7+
 
 tempalte : adminLTE
 
-sample of database : [services medigo](https://github.com/mrbontor/laravel-and-nodejs/services/medigo_db_sample/)
+sample of database : [services medigo](https://github.com/mrbontor/laravel-and-nodejs/tree/master/services/medigo_db_sample/)
 
 to use database, simply use this command
 
 - mongorestore -d <database_name> <directory_backup>
 
 
-for ducomentations of services, you can import file [services/medigo.postman_collection.json/](https://github.com/mrbontor/laravel-and-nodejs/services/medigo.postman_collection.json) on [POSTMAND](https://learning.postman.com/docs/postman/collections/working-with-openAPI/)
+for ducomentations of services, you can import file [services/medigo.postman_collection.json/](https://github.com/mrbontor/laravel-and-nodejs/blob/master/services/medigo.postman_collection.json) on [POSTMAND](https://learning.postman.com/docs/postman/collections/working-with-openAPI/)
 
 
 ### INSTALATION
@@ -62,10 +62,10 @@ to monitor log,
 **fully ajax.**
 sample image:
 
-![image1](https://github.com/mrbontor/laravel-and-nodejs/1.jpg)
+![image1](https://github.com/mrbontor/laravel-and-nodejs/blob/master/1.jpg)
 
-![image2](https://github.com/mrbontor/laravel-and-nodejs/2.jpg)
+![image2](https://github.com/mrbontor/laravel-and-nodejs/blob/master/2.jpg)
 
-![image3](https://github.com/mrbontor/laravel-and-nodejs/3.jpg)
+![image3](https://github.com/mrbontor/laravel-and-nodejs/blob/master/3.jpg)
 
-![image4](https://github.com/mrbontor/laravel-and-nodejs/4.jpg)
+![image4](https://github.com/mrbontor/laravel-and-nodejs/blob/master/4.jpg)
