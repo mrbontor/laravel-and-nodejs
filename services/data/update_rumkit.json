@@ -1,0 +1,40 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$idupdate": "http://example.com/update.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "nama",
+        "jenis",
+        "kabupaten",
+        "alamat",
+		"keterangan"
+    ],
+    "properties": {
+        "nama": {
+            "$idupdate": "#/properties/nama",
+            "type": "string",
+            "title": "nama rumah sakit",
+            "default": "",
+			"minLength": 0,
+            "maxLength": 40,
+            "examples": [
+                "Mr Bontor"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "keterangan": {
+            "$idupdate": "#/properties/keterangan",
+            "type": "string",
+            "title": "keterangan rumah sakit",
+            "default": "",
+            "minLength": 0,
+            "maxLength": 100,
+            "examples": [
+                "saya adalah rumah sakit dunia"
+            ],
+            "pattern": "^(.*)$"
+        }
+    }
+}

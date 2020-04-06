@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "43b54efa-6f04-4211-9c81-95a2543e5108",
+		"name": "medigo",
+		"description": "example crud api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dokter",
+			"item": [
+				{
+					"name": "create doker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"no_induk\": \"345678\",\r\n    \"nama\": \"test\",\r\n    \"jenkel\": \"Pria\",\r\n    \"spesialis\": [\r\n    \t\"5e863fbc6a975b2d78cdd291\", \"5e863fe46a975b2d78cdd292\"\r\n    ],\r\n    \"skill\": [\r\n    \t\"5e865e35390458482c603c0a\", \"5e865e4a390458482c603c0b\"\r\n    ],\r\n    \"lokasi\": [\r\n    \t\"5e86550b81be275e287e6ac5\", \"5e865633f72e3940a8f42d52\"\r\n    ],\r\n    \"tgl_lahir\": \"2020-20-20\",\r\n    \"keterangan\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-dokter"
+					},
+					"response": []
+				},
+				{
+					"name": "update dokter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8666befe1dd42090cb41f8\",\n\t\"no_induk\": \"123456\",\n    \"nama\": \"test\",\n    \"jenkel\": \"Wanita\",\n    \"spesialis\": [\n    \t{\"id\":\"5e863fbc6a975b2d78cdd291\"},\n    \t{\"id\": \"5e863fe46a975b2d78cdd292\"}\n    ],\n    \"skill\": [\n    \t{\"id\":\"5e865e35390458482c603c0a\"},\n    \t{\"id\":\"5e865e4a390458482c603c0b\"}\n    ],\n    \"lokasi\": [\n    \t{\"id\":\"5e86550b81be275e287e6ac5\"},\n    \t{\"id\":\"5e865633f72e3940a8f42d52\"}\n    ],\n    \"tgl_lahir\": \"2020-20-20\",\n    \"keterangan\": \"test\",\n    \"status\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-dokter"
+					},
+					"response": []
+				},
+				{
+					"name": "list dokter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/list-dokter"
+					},
+					"response": []
+				},
+				{
+					"name": "find dokter by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-dokter/5e873ebf742e0170d8d7e4e7"
+					},
+					"response": []
+				},
+				{
+					"name": "autocomplete dokter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/search-dokter/bud"
+					},
+					"response": []
+				},
+				{
+					"name": "find dokter by spesialis",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"palito one\",\n\t\"spesialis\": \"5e863fe46a975b2d78cdd292\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/find-by-spesialis/5e863fe46a975b2d78cdd292"
+					},
+					"response": []
+				},
+				{
+					"name": "find dokter by spesialis adn Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"lokasi\": \"5e86550b81be275e287e6ac5\",\n\t\"spesialis\": \"5e863fbc6a975b2d78cdd291\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/find-by-speslok"
+					},
+					"response": []
+				},
+				{
+					"name": "find dokter by skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-by-skill/5e86854df76c0d09b423c0f4"
+					},
+					"response": []
+				},
+				{
+					"name": "delete dokter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}:3001/delete-dokter/5e863c409ba98256d81b31d7"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "dokter spesialis",
+			"item": [
+				{
+					"name": "create spesialis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Dokter THT\",\n    \"keterangan\": \"Praktisi THT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-spesialis"
+					},
+					"response": []
+				},
+				{
+					"name": "update spesialis",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8640316a975b2d78cdd294\",\n\t\"nama\": \"Dokter alsbdasndad\",\n    \"keterangan\": \"Praktisi alsbdasndad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-spesialis"
+					},
+					"response": []
+				},
+				{
+					"name": "list spesialis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/list-spesialis"
+					},
+					"response": []
+				},
+				{
+					"name": "find spesialis by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-by-spesialis/5e863fe86a975b2d78cdd291"
+					},
+					"response": []
+				},
+				{
+					"name": "autocomplete spesialis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/search-spesialis/als"
+					},
+					"response": []
+				},
+				{
+					"name": "delete spesialis",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}:3001/delete-spesialis/5e8640316a975b2d78cdd294"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "rumkit",
+			"item": [
+				{
+					"name": "create rumkit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"RS 2\",\n\t\"jenis\": \"klinik\",\n\t\"alamat\": \"Jakarta\",\n    \"keterangan\": \"rumah sakit test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-rumkit"
+					},
+					"response": []
+				},
+				{
+					"name": "update rumkit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e86550b81be275e287e6ac5\",\n\t\"nama\": \"Rumah Sakit TEST 1\",\n\t\"jenis\": \"klinik\",\n\t\"alamat\": \"Medan sekitar\",\n    \"keterangan\": \"rumah sakit test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-rumkit"
+					},
+					"response": []
+				},
+				{
+					"name": "list rumkit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/list-rumkit"
+					},
+					"response": []
+				},
+				{
+					"name": "find rumkit by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-rumkit/5e86550b81be275e287e6ac5"
+					},
+					"response": []
+				},
+				{
+					"name": "autocomplete rumkit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/search-rumkit/rs"
+					},
+					"response": []
+				},
+				{
+					"name": "delete rumkit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}:3001/delete-rumkit/5e865653f72e3940a8f42d53"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "skill / keahlian",
+			"item": [
+				{
+					"name": "create skill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Bedah sinus\",\n\t\"keterangan\": \"bedah sinus\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-skill"
+					},
+					"response": []
+				},
+				{
+					"name": "update skill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e865e65390458482c603c0c\",\n\t\"nama\": \"bedah aja\",\n\t\"keterangan\": \"bedah test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-skill"
+					},
+					"response": []
+				},
+				{
+					"name": "list skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/list-skill"
+					},
+					"response": []
+				},
+				{
+					"name": "find skill by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-skill/5e865e65390458482c603c0c"
+					},
+					"response": []
+				},
+				{
+					"name": "autocomplete skill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/search-skill/aja"
+					},
+					"response": []
+				},
+				{
+					"name": "delete skill",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}:3001/delete-skill/5e865e65390458482c603c0c"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "jadwal",
+			"item": [
+				{
+					"name": "create jadwal dokte",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"hari\": \"Minggu\",\n\t\"buka_jam\": \"11:00\",\n\t\"tutup_jam\": \"12:00\",\n\t\"dokter_id\": \"5e89017b8083270568292e16\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-jadwal"
+					},
+					"response": []
+				},
+				{
+					"name": "update jadwal dokter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8963fcae49d5994936eced\",\n\t\"hari\": \"Senin\",\n\t\"buka_jam\": \"10:00\",\n\t\"tutup_jam\": \"11:00\",\n\t\"dokter_id\": \"5e873ea00485ad6e9c425110\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-jadwal"
+					},
+					"response": []
+				},
+				{
+					"name": "list jadwal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8963fcae49d5994936eced\",\n\t\"hari\": \"Senin\",\n\t\"buka_jam\": \"10:10\",\n\t\"tutup_jam\": \"11:00\",\n\t\"dokter_id\": \"5e873ea00485ad6e9c425110\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/list-jadwal"
+					},
+					"response": []
+				},
+				{
+					"name": "find adwal by dokter id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-jadwal/5e8967666a22b949d07e26b7"
+					},
+					"response": []
+				},
+				{
+					"name": "find adwal by dokter id Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-jadwal-dokter/5e873ea00485ad6e9c425110"
+					},
+					"response": []
+				},
+				{
+					"name": "delete jadwal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8963fcae49d5994936eced\",\n\t\"hari\": \"Senin\",\n\t\"buka_jam\": \"10:10\",\n\t\"tutup_jam\": \"11:00\",\n\t\"dokter_id\": \"5e873ea00485ad6e9c425110\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/list-jadwal"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jenis Penyakit",
+			"item": [
+				{
+					"name": "create penyakit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nama\": \"Bedah burung \",\n\t\"spesialis_id\": \"5e863fe46a975b2d78cdd292\",\n\t\"keterangan\": \"bedah burung \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/create-penyakit"
+					},
+					"response": []
+				},
+				{
+					"name": "update penyakit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"5e8aaae9b3809436d86503a1\",\n\t\"nama\": \"Bedah leher test\",\n\t\"spesialis_id\": \"5e863fe46a975b2d78cdd292\",\n\t\"keterangan\": \"bedah leher test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}:3001/update-penyakit"
+					},
+					"response": []
+				},
+				{
+					"name": "list penyakit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/list-penyakit"
+					},
+					"response": []
+				},
+				{
+					"name": "find penyakit by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/find-penyakit/5e8aaae9b3809436d86503a1"
+					},
+					"response": []
+				},
+				{
+					"name": "autocomplete penyakit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}:3001/search-penyakit/otak"
+					},
+					"response": []
+				},
+				{
+					"name": "delete skill",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}:3001/delete-penyakit/5e8aab86b3809436d86503a2"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

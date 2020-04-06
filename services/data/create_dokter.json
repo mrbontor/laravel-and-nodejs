@@ -1,0 +1,87 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$idcreate": "http://example.com/create.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "no_induk",
+		"nama",
+		"jenkel",
+        "spesialis",
+        "skill",
+        "lokasi",
+        "tgl_lahir",
+        "keterangan",
+		"status"
+    ],
+    "properties": {
+        "no_induk": {
+            "$idcreate": "#/properties/no_induk",
+            "type": "string",
+            "title": "nomor induk",
+            "default": "",
+			"minLength": 5,
+            "maxLength": 18,
+            "examples": [
+                "198503302003121001 "
+            ],
+			"pattern": "^[0-9]+$"
+        },
+        "nama": {
+            "$idcreate": "#/properties/nama",
+            "type": "string",
+            "title": "nama dokter",
+            "default": "",
+			"minLength": 0,
+            "maxLength": 40,
+            "examples": [
+                "Mr Bontor"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "jenkel": {
+            "$idcreate": "#/properties/jenkel",
+            "type": "string",
+            "title": "Schema jenkel",
+            "enum": ["Pria","Wanita"],
+            "default": "",
+            "examples": [
+                "Pria or Kontrak"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "tgl_lahir": {
+            "$idcreate": "#/properties/tgl_lahir",
+            "type": "string",
+            "title": "tgl_lahir dokter",
+            "default": "",
+            "maxLength": 50,
+            "examples": [
+                "2019-05-22 "
+            ],
+            "pattern": "^(.*)$"
+        },
+        "keterangan": {
+            "$idcreate": "#/properties/keterangan",
+            "type": "string",
+            "title": "keterangan dokter",
+            "default": "",
+            "maxLength": 100,
+            "examples": [
+                "saya adalah dokter dunia"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "status": {
+            "$idcreate": "#/properties/status",
+            "type": "boolean",
+            "title": "Schema Status",
+            "default": "",
+			"examples": [
+                "True or false"
+            ],
+            "pattern": "^(.*)$"
+        }
+    }
+}

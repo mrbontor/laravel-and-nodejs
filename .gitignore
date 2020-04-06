@@ -1,0 +1,17 @@
+/medigo/node_modules
+/medigo/bower_components
+/medigo/public/hot
+/medigo/public/storage
+/medigo/storage/*.key
+/medigo/vendor
+/medigo/.env
+/medigo/.phpunit.result.cache
+/medigo/Homestead.json
+/medigo/Homestead.yaml
+/medigo/npm-debug.log
+/medigo/yarn-error.log
+
+/medigo/package-lock.json
+/services/package-lock.json
+**/node_modules
+*.log
